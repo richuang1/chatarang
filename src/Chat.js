@@ -33,7 +33,7 @@ class Chat extends Component {
     }
   }
 
-  addMessage = () => {
+  addMessage = (body) => {
     const messages = [...this.state.messages]
 
     messages.push({
@@ -43,7 +43,7 @@ class Chat extends Component {
         displayName: 'Stefany',
         email: 'stefany@singing.org',
       },
-      body: 'I do not think he\'s annoying. How dare you, Dana!',
+      body: body,
     })
 
     this.setState({ messages: messages })

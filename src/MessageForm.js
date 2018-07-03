@@ -1,16 +1,24 @@
 import React, { Component } from 'react'
 
 class MessageForm extends Component {
-    handleSubmit=(ev) => {
-        ev.preventDefafult()
-        this.props.addMessage()
+    state = {
+      body: ' ', 
     }
+  handleSubmit = (ev) => {
+    ev.preventDefault()
+    this.props.addMessage(this.state.body)
+  }
 
-    
+
+  handleChange=(ev) => {
+    this.setState({body:ev.target.value})
+  }
+
   render() {
     return (
-      <form className="MessageForm"
-      onSubmit={this.handleSubmit}
+      <form
+        className="MessageForm"
+        onSubmit={this.handleSubmit}
       >
         <input
           autoFocus
@@ -18,6 +26,8 @@ class MessageForm extends Component {
           type="text"
           name="body"
           placeholder="Type a message..."
+          value={ this.state.body}
+          onChange={this.handleChange}
         />
         <button type="submit">
           Send
