@@ -1,25 +1,30 @@
 import React, { Component } from 'react'
 
-import Sidebar from './Sidebar'
-import Chat from './Chat'
+import './App.css'
+import Main from './Main'
 
-class Main extends Component {
+class App extends Component {
+  constructor() {
+    super()
+
+    this.state = {
+      user: {
+        uid: 'sdfs34843560',
+        displayName: 'Davey',
+        email: 'davey@singing.org',
+      },
+    }
+  }
+
   render() {
     return (
-      <div className="Main" style={styles}>
-        <Sidebar />
-        <Chat />
+      <div className="App">
+        <Main user={this.state.user} />
       </div>
     )
   }
 }
 
-  const styles = {
-    display: 'flex',
-    allignItems: "stretch",
-    height: '100vh',
-}
+export default App
 
 
-
-export default Main
