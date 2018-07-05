@@ -11,23 +11,22 @@ class Chat extends Component {
     this.state = {
       messages: [
         {
-          id: 1,
-          user: {
-            uid: 'sdfs34849327',
-            displayName: 'Davey',
-            email: 'davey@fretless.com',
-          },
-          body: 'Chatting up a storm, yo!',
+            id: 1,
+            user: {
+              uid: 123,
+              displayName: 'Davey',
+              email: 'davey@fretless.com',
+            },
+            body: 'I enjoy chatting.',
         },
-
         {
           id: 2,
           user: {
-            uid: 'sdlfkj35948',
+            uid: 456,
             displayName: 'Dana',
             email: 'dana@fretless.com',
           },
-          body: 'This guy is so annoying. I hate my job.',
+          body: 'This guy is so hip. I love my job.',
         },
       ],
     }
@@ -48,7 +47,7 @@ class Chat extends Component {
 
   render() {
     return (
-      <div className="Chat">
+      <div className="Chat" style = {styles.chat}>
         <ChatHeader />
         <MessageList messages={this.state.messages} />
         <MessageForm addMessage={this.addMessage} />
@@ -56,5 +55,12 @@ class Chat extends Component {
     )
   }
 }
+  const styles = {
+    chat: {
+      flex: 1,
+      display: "flex",
+      flexDirection: "column",
+    },
+  }
 
 export default Chat

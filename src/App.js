@@ -9,10 +9,10 @@ class App extends Component {
 
     this.state = {
       user: {
-        uid: 'sdfs34843560',
+        uid: 'SDKfh32948',
         displayName: 'Davey',
-        email: 'davey@singing.org',
-      },
+        email: 'dave@fretless.com',
+      }
     }
   }
 
