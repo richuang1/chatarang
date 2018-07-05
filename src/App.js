@@ -8,7 +8,7 @@ class App extends Component {
   constructor() {
     super()
 
-    const user=JSON.parse(localStorage.getItem('user'))
+    const user = JSON.parse(localStorage.getItem('user'))
 
     this.state = {
       user: user || {},
