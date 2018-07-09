@@ -4,6 +4,8 @@ import './App.css'
 import Main from './Main'
 import SignIn from './SignIn'
 
+import { auth } from './base'
+
 class App extends Component {
   constructor() {
     super()
@@ -15,9 +17,13 @@ class App extends Component {
     }
   }
 
-  handleAuth = (user) => {
-    this.setState({ user })
-    localStorage.setItem('user', JSON.stringify(user))
+  handleAuth = (oAuthuser) => {
+    const user ={
+      uid: oAuthUser.uid,
+      displayName: oAuthUser.displayName,
+      email:oAuthUser.email,
+      photoUrl: oAuthUser.photoURL,
+    }
   }
 
   signedIn = () => {
@@ -25,6 +31,7 @@ class App extends Component {
   }
 
   signOut = () => {
+    auth.signOut()
     this.setState({ user: {} })
     localStorage.removeItem('user')
   }
