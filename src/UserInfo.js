@@ -20,14 +20,10 @@ const UserInfo = ({ user, signOut }) => {
 
 const styles = {
   userInfo: {
-    padding: '0 1rem',
-    marginBottom: '1rem',
-    display: 'flex',
-    alignItems: 'center',
-  },
-
-  user: {
     flex: 1,
+    overflowX :'hidden',
+    textOverflow: "ellipsis",
+  
   }
 }
 
